@@ -1,0 +1,27 @@
+To Install wireguard client on Ubuntu:
+A.. To install wireguard, run below commands:
+
+
+sudo add-apt-repository ppa:wireguard/wireguard
+sudo apt-get update
+sudo apt-get install wireguard-dkms wireguard-tools
+sudo apt-get install openresolv
+
+
+B. create a new peer in korplink portal (Name the peer accordingly For
+Ex HR application server)
+
+
+C.  create a configuration file like below and paste the contents from
+peer configuration file created from Korplink portal. To save , ctrl s
+and ctrl x
+
+
+sudo nano /etc/wireguard/wg0.conf
+
+
+D. Start wireguard and make wireguard start automatically on server boot
+
+
+sudo systemctl start wg-quick@wg0
+sudo systemctl enable wg-quick@wg0
